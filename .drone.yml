@@ -1,0 +1,19 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_REGISTRY_LOGIN
+      password:
+        from_secret: DOCKER_REGISTRY_PASSWORD
+      repo:
+        from_secret: DOCKER_REGISTRY_REPO
+      registry:
+        from_secret: DOCKER_REGISTRY_SERVER
+    when:
+      branch:
+        - master
