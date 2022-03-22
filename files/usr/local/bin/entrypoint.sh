@@ -27,8 +27,8 @@ setConfig "Domain" "${OPENDKIM_DOMAIN}"
 setConfig "Selector" "${OPENDKIM_SELECTOR}"
 setConfig "KeyFile" "/etc/dkimkeys/${OPENDKIM_SELECTOR}.key"
 setConfig "ReportAddress" "postmaster@${OPENDKIM_DOMAIN}"
-setConfig "UserID" "opendkim"
-setConfig "Socket" "inet:8891@localhost"
+setConfig "UserID" "opendkim:opendkim"
+setConfig "Socket" "inet:8891"
 
 
 chmod 700 /etc/dkimkeys
